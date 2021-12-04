@@ -12,10 +12,21 @@ public class ObstacleGenerator : MonoBehaviour
     public bool isRandomised;
     private float obstacleWidth;
 
+    public GameObject[] theObstacles;
+    private int obstacleSelector;
+    private float[] obstacleWidths;
+
     // Start is called before the first frame update
     void Start()
     {
         obstacleWidth = theObstacle.GetComponent <BoxCollider2D>().size.x;
+
+        obstacleWidths = new float[theObstacles.Length];
+
+        for (int i=0; i<theObstacles.Length; i++)
+        {
+            obstacleWidths[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.x;
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +39,9 @@ public class ObstacleGenerator : MonoBehaviour
            
             transform.position = new Vector3(transform.position.x + 5*obstacleWidth + distanceBetween, transform.position.y, transform.position.z);
 
-            Instantiate(theObstacle, transform.position, transform.rotation);
+            obstacleSelector = Random.Range(0, theObstacles.Length);
+
+            Instantiate(theObstacles[obstacleSelector], transform.position, transform.rotation);
         }
     }
 }

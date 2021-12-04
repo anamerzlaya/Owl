@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float moveSpeed_Main;
     public float moveSpeed_x;
     public float moveSpeed_y;
     public GameObject Owl;
@@ -29,8 +30,8 @@ public class PlayerController : MonoBehaviour
              newXpos = transform.position.x + moveSpeed_x * Input.GetAxis("Horizontal");
          if (Input.GetAxis("Vertical") != 0)
              newYpos = transform.position.y + moveSpeed_y * Input.GetAxis("Vertical");
-         //transform.position = new Vector3(newXpos, newYpos, transform.position.z);
-      
+        //transform.position = new Vector3(newXpos, newYpos, transform.position.z);
+        newXpos = newXpos + moveSpeed_Main;
         float clampedY = Mathf.Clamp(newYpos, minHight, maxHight);
         transform.position = new Vector3(newXpos, clampedY, transform.position.z);
 
