@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3651482}
   - component: {fileID: 3651481}
   - component: {fileID: 3651483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 548203820}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 726049709}
   - component: {fileID: 726049708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GrassGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072228051}
   - component: {fileID: 1072228052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ObstacleGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
