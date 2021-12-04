@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameManager theGameManager;
+
     public float moveSpeed_Main;
+    private float moveSpeedStore;
     public float moveSpeed_x;
     public float moveSpeed_y;
+    public float speedMultiplier;
+    public float speedIncreaseMilestone;
+    private float speedIncreaseMilestoneStore;
+    private float speedMilestoneCount;
+    private float speedMilestoneCountStore;
+
     public GameObject Owl;
     public float minHight, maxHight;
 
@@ -16,12 +25,22 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         theRB = GetComponent<Rigidbody2D>();
+        speedMilestoneCount = speedIncreaseMilestone;
 
+        moveSpeedStore = moveSpeed_Main;
+        speedMilestoneCountStore = speedMilestoneCount;
+        speedIncreaseMilestoneStore = speedIncreaseMilestone;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.x > speedMilestoneCount)
+        {
+            speedMilestoneCount += speedIncreaseMilestone;
+            speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
+            moveSpeed_Main = moveSpeed_Main * speedMultiplier;
+        }
         //theRB.velocity = new Vector2(moveSpeed_x * Input.GetAxis("Horizontal"), moveSpeed_y * Input.GetAxis("Vertical"));
         // if (Input.GetAxis("Horizontal")!=0) Debug.Log( theRB.velocity.x);
          float newXpos = transform.position.x;
@@ -43,6 +62,18 @@ public class PlayerController : MonoBehaviour
         {
             Owl.GetComponent<Animator>().SetBool("IsFlyForward", false);
             Owl.GetComponent<Animator>().SetBool("IsFlyBackwards", false);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //RETHINK HOW TO ORGANISE BETTER
+        if (other.gameObject.tag == "BadBug")
+        {
+            theGameManager.RestartGame();
+            moveSpeed_Main = moveSpeedStore;
+            speedMilestoneCount = speedMilestoneCountStore;
+            speedIncreaseMilestone = speedIncreaseMilestoneStore;
         }
     }
 }

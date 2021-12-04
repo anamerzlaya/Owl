@@ -15,17 +15,19 @@ public class ObstacleGenerator : MonoBehaviour
     public GameObject[] theObstacles;
     private int obstacleSelector;
     private float[] obstacleWidths;
+    private float[] obstacleYpos;
 
     // Start is called before the first frame update
     void Start()
     {
-        obstacleWidth = theObstacle.GetComponent <BoxCollider2D>().size.x;
+        //obstacleWidth = theObstacle.GetComponent <BoxCollider2D>().size.x;
 
         obstacleWidths = new float[theObstacles.Length];
 
         for (int i=0; i<theObstacles.Length; i++)
         {
             obstacleWidths[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.x;
+            //obstacleYpos[i] = theObstacles[i].transform.position.y;
         }
     }
 
@@ -40,7 +42,8 @@ public class ObstacleGenerator : MonoBehaviour
             transform.position = new Vector3(transform.position.x + 5*obstacleWidth + distanceBetween, transform.position.y, transform.position.z);
 
             obstacleSelector = Random.Range(0, theObstacles.Length);
-
+            //transform.position = new Vector3(transform.position.x, obstacleYpos[obstacleSelector], transform.position.z);
+            //Debug.Log(obstacleYpos[obstacleSelector]);
             Instantiate(theObstacles[obstacleSelector], transform.position, transform.rotation);
         }
     }
