@@ -241,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3651479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9299e7b4ca14e114a98cb9cd3373edea, type: 3}
   m_Name: 
@@ -347,7 +347,7 @@ Transform:
   - {fileID: 1033819046}
   - {fileID: 944594454}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548203819
 GameObject:
@@ -381,7 +381,7 @@ Transform:
   - {fileID: 1072228051}
   - {fileID: 698760916}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653941124
 GameObject:
@@ -856,9 +856,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9f6335b471d8b4a8882e71334a5820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theGameManager: {fileID: 0}
   moveSpeed_Main: 0
   moveSpeed_x: 5
   moveSpeed_y: 2
+  speedMultiplier: 0
+  speedIncreaseMilestone: 0
   Owl: {fileID: 0}
   minHight: 0
   maxHight: 0
@@ -1001,6 +1004,52 @@ MonoBehaviour:
   - {fileID: 1643377259149351814, guid: 2b2cf22e4925d5f4c865ccae67d4f4eb, type: 3}
   - {fileID: 2463179351905521251, guid: a4d2e9904a08fa2488eba00866332ce4, type: 3}
   - {fileID: 4245145380488977612, guid: d2921f1ea56c7f541b74b634f843381b, type: 3}
+--- !u!1 &1132515507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132515509}
+  - component: {fileID: 1132515508}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1132515508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132515507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c386ecb80f2d9e48b1a1889eaaa964d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleGenerator: {fileID: 1072228051}
+  grassGenerator: {fileID: 726049709}
+  thePlayer: {fileID: 1805246480}
+--- !u!4 &1132515509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132515507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256190752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,9 +1387,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9f6335b471d8b4a8882e71334a5820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theGameManager: {fileID: 0}
   moveSpeed_Main: 0.15
   moveSpeed_x: 0.1
-  moveSpeed_y: 0.05
+  moveSpeed_y: 0.1
+  speedMultiplier: 1.05
+  speedIncreaseMilestone: 100
   Owl: {fileID: 1019670158}
   minHight: -20.7
   maxHight: 20.7
@@ -1394,7 +1446,7 @@ Transform:
   m_Children:
   - {fileID: 1019670161}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925751659
 GameObject:
@@ -1558,5 +1610,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
