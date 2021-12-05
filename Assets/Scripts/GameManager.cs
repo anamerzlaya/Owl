@@ -13,12 +13,16 @@ public class GameManager : MonoBehaviour
 
     private ObstacleDestroyer[] obstacleList;
 
+    private ScoreManager theScoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
         obstacleStartPoint = obstacleGenerator.position;
         grassStartPoint = grassGenerator.position;
         playerStartPoint = thePlayer.transform.position;
+
+        theScoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RestartGameCo()
     {
+        theScoreManager.scoreIncreasing = false;
+
         thePlayer.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         obstacleList = FindObjectsOfType<ObstacleDestroyer>();
@@ -45,5 +51,7 @@ public class GameManager : MonoBehaviour
         obstacleGenerator.position = obstacleStartPoint;
         grassGenerator.position = grassStartPoint;
         thePlayer.gameObject.SetActive(true);
+        theScoreManager.scoreCount = 0;
+        theScoreManager.scoreIncreasing = true;
     }
 }
