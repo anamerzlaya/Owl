@@ -15,7 +15,7 @@ TagManager:
   - Obstacles
   - Player
   - BadBug
-  - 
+  - GoodBug
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2300911863
+    locked: 0
+  - name: Bugs
+    uniqueID: 1572618005
     locked: 0
