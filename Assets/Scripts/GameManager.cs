@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     private ScoreManager theScoreManager;
 
+    public FinalMenu theFinalScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,14 +35,48 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        StartCoroutine("RestartGameCo");
-    }
+        //StartCoroutine("RestartGameCo");
+        theScoreManager.scoreIncreasing = false;
 
+        StartCoroutine("RestartGameCoroutine");
+
+        //theFinalScreen.gameObject.SetActive(true);
+        //theFinalScreen.GetComponent<Animator>().SetBool("StartAnim", true);
+    }
+    public void Reset()
+    {
+        theFinalScreen.gameObject.SetActive(false);
+        theFinalScreen.GetComponent<Animator>().SetBool("StartAnim", false);
+
+        obstacleList = FindObjectsOfType<ObstacleDestroyer>();
+        for (int i = 0; i < obstacleList.Length; i++)
+        {
+            obstacleList[i].gameObject.SetActive(false);
+        }
+        thePlayer.transform.position = playerStartPoint;
+        obstacleGenerator.position = obstacleStartPoint;
+        grassGenerator.position = grassStartPoint;
+        thePlayer.gameObject.SetActive(true);
+        theScoreManager.scoreCount = 0;
+        theScoreManager.scoreIncreasing = true;
+
+    }
+    public IEnumerator RestartGameCoroutine()
+    {
+        thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", true);
+        yield return new WaitForSeconds(1.0f);
+        thePlayer.gameObject.SetActive(false);
+        thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
+
+        theFinalScreen.gameObject.SetActive(true);
+        theFinalScreen.GetComponent<Animator>().SetBool("StartAnim", true);
+    }
+    
     public IEnumerator RestartGameCo()
     {
         theScoreManager.scoreIncreasing = false;
-
         thePlayer.gameObject.SetActive(false);
+
         yield return new WaitForSeconds(0.5f);
         obstacleList = FindObjectsOfType<ObstacleDestroyer>();
         for(int i=0; i<obstacleList.Length; i++)

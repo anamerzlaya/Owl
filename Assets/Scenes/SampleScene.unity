@@ -734,7 +734,7 @@ SpriteRenderer:
   m_Size: {x: 5.11, y: 5.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &698760915
@@ -1335,13 +1335,14 @@ GameObject:
   - component: {fileID: 993392736}
   - component: {fileID: 993392735}
   - component: {fileID: 993392737}
+  - component: {fileID: 993392738}
   m_Layer: 5
   m_Name: FinalMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &993392734
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1421,6 +1422,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &993392738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993392733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b527973bdeb363438c11f20a0e717d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019670158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1779,7 @@ MonoBehaviour:
   obstacleGenerator: {fileID: 1072228051}
   grassGenerator: {fileID: 726049709}
   thePlayer: {fileID: 1805246480}
+  theFinalScreen: {fileID: 993392738}
 --- !u!4 &1132515509
 Transform:
   m_ObjectHideFlags: 0
@@ -1938,7 +1952,7 @@ SpriteRenderer:
   m_Size: {x: 5.11, y: 5.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1261106460
@@ -2254,7 +2268,7 @@ SpriteRenderer:
   m_Size: {x: 5.11, y: 5.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1426255975
@@ -2418,7 +2432,7 @@ SpriteRenderer:
   m_Size: {x: 5.11, y: 5.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1490345415
