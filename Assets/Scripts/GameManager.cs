@@ -6,8 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public Transform obstacleGenerator;
     private Vector3 obstacleStartPoint;
+    public Transform obstacleGeneratorAbove;
+    private Vector3 obstacleStartPointAbove;
     public Transform grassGenerator;
     private Vector3 grassStartPoint;
+    public Transform goodBugGenerator;
+    private Vector3 goodBugStartPoint;
+   public Transform badBugGenerator;
+    private Vector3 badBugStartPoint;
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
 
@@ -21,7 +27,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         obstacleStartPoint = obstacleGenerator.position;
+        obstacleStartPointAbove = obstacleGeneratorAbove.position;
         grassStartPoint = grassGenerator.position;
+        goodBugStartPoint = goodBugGenerator.position;
+        badBugStartPoint = badBugGenerator.position;
         playerStartPoint = thePlayer.transform.position;
 
         theScoreManager = FindObjectOfType<ScoreManager>();
@@ -56,7 +65,10 @@ public class GameManager : MonoBehaviour
         thePlayer.transform.position = playerStartPoint;
         thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
         obstacleGenerator.position = obstacleStartPoint;
+        obstacleGeneratorAbove.position = obstacleStartPointAbove;
         grassGenerator.position = grassStartPoint;
+        goodBugGenerator.position = goodBugStartPoint;
+        badBugGenerator.position = badBugStartPoint;
         thePlayer.gameObject.SetActive(true);
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
@@ -87,7 +99,10 @@ public class GameManager : MonoBehaviour
         }
         thePlayer.transform.position = playerStartPoint;
         obstacleGenerator.position = obstacleStartPoint;
+        obstacleGeneratorAbove.position = obstacleStartPointAbove;
         grassGenerator.position = grassStartPoint;
+        goodBugGenerator.position = goodBugStartPoint;
+        badBugGenerator.position = badBugStartPoint;
         thePlayer.gameObject.SetActive(true);
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;

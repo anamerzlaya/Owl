@@ -2522,7 +2522,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleGenerator: {fileID: 1072228051}
+  obstacleGeneratorAbove: {fileID: 1732466588}
   grassGenerator: {fileID: 726049709}
+  goodBugGenerator: {fileID: 1261106461}
+  badBugGenerator: {fileID: 1062667750}
   thePlayer: {fileID: 1805246480}
   theFinalScreen: {fileID: 993392738}
 --- !u!4 &1132515509
@@ -4288,7 +4291,7 @@ MonoBehaviour:
   moveSpeed_x: 0.1
   moveSpeed_y: 0.1
   speedMultiplier: 1.1
-  speedDescreaseLeft: 0.3
+  speedDescreaseLeft: 0.1
   speedIncreaseMilestone: 100
   Owl: {fileID: 1019670158}
   minHight: -20.7
