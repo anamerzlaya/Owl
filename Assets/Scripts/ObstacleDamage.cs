@@ -26,7 +26,8 @@ public class ObstacleDamage : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            AudioManager.instance.PlaySFX(0);
+            int sfxToPlay = Random.Range(0, 3);
+            AudioManager.instance.PlaySFX(sfxToPlay);
             theScoreManager.AddScore(-scoreToTake);
             Debug.Log("obstacle collided with player");
             //Debug.Log(thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().GetBool("Hit"));

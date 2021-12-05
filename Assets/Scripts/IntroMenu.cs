@@ -18,7 +18,7 @@ public class IntroMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        AudioManager.instance.PlaySFX(3);
+        AudioManager.instance.PlaySFX(8);
         //Application.LoadLevel("playGameLevel");
         SceneManager.LoadScene(1);
     }

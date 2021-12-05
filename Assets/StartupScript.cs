@@ -9,10 +9,14 @@ public class StartupScript : MonoBehaviour
 
     // Backtrace client instance
     private BacktraceClient _backtraceClient;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         var serverUrl = "https://submit.backtrace.io/anamerzlaya/eb606c24dd4b1f263f2af2b228490e1df7d2a04a96d9b9b8053c2bfa584cfaad/json";
-        var gameObjectName = "Backtrace";
+        var gameObjectName = "backtrace";
         var databasePath = "${Application.persistentDataPath}/sample/backtrace/path";
         var attributes = new Dictionary<string, string>() { { "my-super-cool-attribute-name", "attribute-value" } };
 
@@ -34,6 +38,7 @@ public class StartupScript : MonoBehaviour
         try
         {
             // throw an exception here
+            throw new Exception();
         }
         catch (Exception exception)
         {
@@ -43,6 +48,7 @@ public class StartupScript : MonoBehaviour
                attachmentPaths: new List<string>() { @"file_path_1", @"file_path_2" }
            );
             _backtraceClient.Send(report);
+            Debug.Log("error sent");
         }
     }
 }

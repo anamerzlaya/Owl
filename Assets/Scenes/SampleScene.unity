@@ -4287,7 +4287,7 @@ MonoBehaviour:
   moveSpeed_Main: 0.1
   moveSpeed_x: 0.1
   moveSpeed_y: 0.1
-  speedMultiplier: 1.05
+  speedMultiplier: 1.1
   speedDescreaseLeft: 0.3
   speedIncreaseMilestone: 100
   Owl: {fileID: 1019670158}

@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             obstacleList[i].gameObject.SetActive(false);
         }
         thePlayer.transform.position = playerStartPoint;
+        thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
         obstacleGenerator.position = obstacleStartPoint;
         grassGenerator.position = grassStartPoint;
         thePlayer.gameObject.SetActive(true);
@@ -64,10 +65,10 @@ public class GameManager : MonoBehaviour
     public IEnumerator RestartGameCoroutine()
     {
         thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", true);
-        AudioManager.instance.PlaySFX(2);
+        AudioManager.instance.PlaySFX(7);
         yield return new WaitForSeconds(1.0f);
-        thePlayer.gameObject.SetActive(false);
         thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
+        thePlayer.gameObject.SetActive(false);
 
         theFinalScreen.gameObject.SetActive(true);
         theFinalScreen.GetComponent<Animator>().SetBool("StartAnim", true);

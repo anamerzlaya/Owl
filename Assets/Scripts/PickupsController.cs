@@ -40,7 +40,9 @@ public class PickupsController : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            AudioManager.instance.PlaySFX(1);
+            
+            int sfxToPlay = Random.Range(4, 6);
+            AudioManager.instance.PlaySFX(sfxToPlay);
 
             theScoreManager.AddScore(scoreToGive);
 

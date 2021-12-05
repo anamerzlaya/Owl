@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e908b13f7467f4185f3f45d43568c4, type: 3}
   m_Name: Backtrace Configuration 1
   m_EditorClassIdentifier: 
-  ServerUrl: 
+  ServerUrl: https://submit.backtrace.io/anamerzlaya/eb606c24dd4b1f263f2af2b228490e1df7d2a04a96d9b9b8053c2bfa584cfaad/json
   Token: 
   ReportPerMin: 50
   DisableInEditor: 0
