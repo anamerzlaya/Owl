@@ -7,15 +7,16 @@ public class PlayerController : MonoBehaviour
     public GameManager theGameManager;
 
     public float moveSpeed_Main;
+    public float speedIncreaseMilestone;
+    private float speedIncreaseMilestoneStore;
+    private float speedMilestoneCount;
+    private float speedMilestoneCountStore;
     private float moveSpeedStore;
     public float moveSpeed_x;
     public float moveSpeed_y;
     public float speedMultiplier;
     public float speedDescreaseLeft;
-    public float speedIncreaseMilestone;
-    private float speedIncreaseMilestoneStore;
-    private float speedMilestoneCount;
-    private float speedMilestoneCountStore;
+
 
     public GameObject Owl;
     public float minHight, maxHight;
@@ -70,15 +71,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D (Collider2D other)
     {
-        //RETHINK HOW TO ORGANISE BETTER
         if (other.gameObject.tag == "BadBug")
         {
-            theGameManager.RestartGame();
+            Debug.Log("owl ate something bad!");
             moveSpeed_Main = moveSpeedStore;
             speedMilestoneCount = speedMilestoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
+            Debug.Log("reset speed " + moveSpeed_Main);
+            //theGameManager.RestartGame();
+            //FindObjectOfType<GameManager>().RestartGame();
+
         }
     }
 }

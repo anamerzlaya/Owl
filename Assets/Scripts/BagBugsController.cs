@@ -36,7 +36,7 @@ public class BagBugsController : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             //END OF THE GAME
-            Debug.Log("owl ate something bad!");
+            Debug.Log("bug touched the owl!");
             FindObjectOfType<GameManager>().RestartGame();
             //gameObject.SetActive(false);
         }

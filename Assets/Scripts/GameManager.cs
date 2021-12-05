@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
 
     public FinalMenu theFinalScreen;
 
+    private float moveSpeedStore;
+    private float speedIncreaseMilestoneStore;
+    private float speedMilestoneCountStore;
+    //private GameObject theOwl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +39,11 @@ public class GameManager : MonoBehaviour
         playerStartPoint = thePlayer.transform.position;
 
         theScoreManager = FindObjectOfType<ScoreManager>();
+
+        moveSpeedStore = thePlayer.moveSpeed_Main;
+        speedMilestoneCountStore = thePlayer.speedIncreaseMilestone;
+        speedIncreaseMilestoneStore = thePlayer.speedIncreaseMilestone;
+        //theOwl = thePlayer.gameObject.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -63,13 +73,21 @@ public class GameManager : MonoBehaviour
             obstacleList[i].gameObject.SetActive(false);
         }
         thePlayer.transform.position = playerStartPoint;
-        thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
+        //thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
+        thePlayer.moveSpeed_Main = moveSpeedStore;
+        thePlayer.speedIncreaseMilestone = speedMilestoneCountStore;
+        thePlayer.speedIncreaseMilestone = speedIncreaseMilestoneStore;
+        //thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().runtimeAnimatorController = theOwlAnimator.runtimeAnimatorController as RuntimeAnimatorController;
         obstacleGenerator.position = obstacleStartPoint;
         obstacleGeneratorAbove.position = obstacleStartPointAbove;
         grassGenerator.position = grassStartPoint;
         goodBugGenerator.position = goodBugStartPoint;
         badBugGenerator.position = badBugStartPoint;
         thePlayer.gameObject.SetActive(true);
+        Animator theOwlAnim = thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        theOwlAnim.enabled = false;
+        theOwlAnim.enabled = true;
+        theOwlAnim.Play("Owl_fly_init");
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
 
@@ -78,8 +96,9 @@ public class GameManager : MonoBehaviour
     {
         thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", true);
         AudioManager.instance.PlaySFX(7);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.2f);
         thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
+
         thePlayer.gameObject.SetActive(false);
 
         theFinalScreen.gameObject.SetActive(true);
@@ -98,6 +117,9 @@ public class GameManager : MonoBehaviour
             obstacleList[i].gameObject.SetActive(false);
         }
         thePlayer.transform.position = playerStartPoint;
+        thePlayer.moveSpeed_Main = moveSpeedStore;
+        thePlayer.speedIncreaseMilestone = speedMilestoneCountStore;
+        thePlayer.speedIncreaseMilestone = speedIncreaseMilestoneStore;
         obstacleGenerator.position = obstacleStartPoint;
         obstacleGeneratorAbove.position = obstacleStartPointAbove;
         grassGenerator.position = grassStartPoint;
