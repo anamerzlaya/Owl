@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 81165984}
   - component: {fileID: 81165985}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: LowerLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,10 +356,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 765476714}
   - {fileID: 1261106461}
+  - {fileID: 765476714}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509176119
 GameObject:
@@ -576,6 +576,7 @@ Transform:
   - {fileID: 3651480}
   - {fileID: 1072228051}
   - {fileID: 698760916}
+  - {fileID: 1732466588}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -904,7 +905,7 @@ Transform:
   - {fileID: 1619447674}
   - {fileID: 1907846112}
   m_Father: {fileID: 162986786}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &765476715
 Animator:
@@ -955,7 +956,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreToGive: 100
   thePlayer: {fileID: 0}
-  maxDistance: 40
+  maxDistance: 35
+--- !u!1 &890915483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890915484}
+  m_Layer: 9
+  m_Name: BadBugs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890915484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890915483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1062667750}
+  - {fileID: 989682725}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &944594453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1083,8 @@ GameObject:
   - component: {fileID: 989682724}
   - component: {fileID: 989682723}
   - component: {fileID: 989682726}
-  m_Layer: 10
+  - component: {fileID: 989682727}
+  m_Layer: 9
   m_Name: BadBug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,15 +1133,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989682722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.88, y: -0.06, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357318070}
   - {fileID: 81165984}
   - {fileID: 1943972600}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 890915484}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &989682726
 CircleCollider2D:
@@ -1125,6 +1159,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &989682727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989682722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6f661bbaa5af547aa62ea30ba4ee32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 0}
+  maxDistance: 35
 --- !u!1 &1019670158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1383,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1062667749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062667750}
+  - component: {fileID: 1062667751}
+  m_Layer: 10
+  m_Name: BadBugGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1062667750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062667749}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 890915484}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062667751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062667749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3bc1cb7d8a09e48b0b415ad593ba5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theBug: {fileID: 1854054003184435570, guid: 1a89ad85af1d1e4469625ecac568a9ee, type: 3}
+  generationPoint: {fileID: 1666027443}
+  distanceBetweenMin: 60
+  distanceBetweenMax: 200
+  minHight: -20
+  maxHight: 20
 --- !u!1 &1072228050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072228050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60, y: -10.4, z: 0}
+  m_LocalPosition: {x: 60, y: -23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 548203820}
@@ -1385,12 +1482,9 @@ MonoBehaviour:
   distanceBetweenMin: 10
   distanceBetweenMax: 100
   isRandomised: 1
+  isAbove: 0
   theObstacles:
-  - {fileID: 622036045831423050, guid: 70ac7197105082b458813414e12e5adb, type: 3}
   - {fileID: 2525382930942378400, guid: df2678af6d74f4d4799dbfdc72315031, type: 3}
-  - {fileID: 2243429292230821697, guid: b60d37d6871aec94488e484d68290126, type: 3}
-  - {fileID: 1643377259149351814, guid: 2b2cf22e4925d5f4c865ccae67d4f4eb, type: 3}
-  - {fileID: 2463179351905521251, guid: a4d2e9904a08fa2488eba00866332ce4, type: 3}
   - {fileID: 4245145380488977612, guid: d2921f1ea56c7f541b74b634f843381b, type: 3}
 --- !u!1 &1132515507
 GameObject:
@@ -1628,7 +1722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162986786}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1261106463
 MonoBehaviour:
@@ -1644,8 +1738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theBug: {fileID: 7317473766888951343, guid: 528dbe82ca3a9994583d2d1d9c352bde, type: 3}
   generationPoint: {fileID: 1666027443}
-  distanceBetweenMin: 10
-  distanceBetweenMax: 50
+  distanceBetweenMin: 30
+  distanceBetweenMax: 80
   minHight: -20
   maxHight: 20
 --- !u!1 &1311469886
@@ -1760,7 +1854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357318070}
   - component: {fileID: 1357318071}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: UpperLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2190,6 +2284,60 @@ Transform:
   m_Father: {fileID: 519420032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1732466587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732466588}
+  - component: {fileID: 1732466589}
+  m_Layer: 7
+  m_Name: ObstacleGeneratorAbove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1732466588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732466587}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 60, y: 23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 548203820}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1732466589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732466587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8981a3128d3c84ab7a68abc567e9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theObstacle: {fileID: 2525382930942378400, guid: df2678af6d74f4d4799dbfdc72315031,
+    type: 3}
+  generationPoint: {fileID: 1666027443}
+  distanceBetween: 10
+  distanceBetweenMin: 10
+  distanceBetweenMax: 100
+  isRandomised: 1
+  isAbove: 1
+  theObstacles:
+  - {fileID: 2525382930942378400, guid: df2678af6d74f4d4799dbfdc72315031, type: 3}
+  - {fileID: 4245145380488977612, guid: d2921f1ea56c7f541b74b634f843381b, type: 3}
 --- !u!1 &1789847126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,7 +2779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943972600}
   - component: {fileID: 1943972601}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BugBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

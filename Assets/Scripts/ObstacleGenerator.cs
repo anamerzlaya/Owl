@@ -12,10 +12,11 @@ public class ObstacleGenerator : MonoBehaviour
     public bool isRandomised;
     private float obstacleWidth;
 
+    public bool isAbove;
     public GameObject[] theObstacles;
     private int obstacleSelector;
+    private float[] obstacleHights;
     private float[] obstacleWidths;
-    private float[] obstacleYpos;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,12 @@ public class ObstacleGenerator : MonoBehaviour
         //obstacleWidth = theObstacle.GetComponent <BoxCollider2D>().size.x;
 
         obstacleWidths = new float[theObstacles.Length];
+        obstacleHights = new float[theObstacles.Length];
 
         for (int i=0; i<theObstacles.Length; i++)
         {
-            obstacleWidths[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.x;
-            //obstacleYpos[i] = theObstacles[i].transform.position.y;
+            obstacleHights[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.x;
+            obstacleWidths[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.y;
         }
     }
 
@@ -38,13 +40,19 @@ public class ObstacleGenerator : MonoBehaviour
         {
             if (isRandomised)
                 distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
-           
-            transform.position = new Vector3(transform.position.x + 5*obstacleWidth + distanceBetween, transform.position.y, transform.position.z);
-
+    
             obstacleSelector = Random.Range(0, theObstacles.Length);
-            //transform.position = new Vector3(transform.position.x, obstacleYpos[obstacleSelector], transform.position.z);
+
+            transform.position = new Vector3(transform.position.x + 5*obstacleWidths[obstacleSelector] + distanceBetween, 
+                transform.position.y , transform.position.z);
+
+            Vector3 shiftY;
+            if (isAbove)
+                shiftY = new Vector3(0f, -5*obstacleHights[obstacleSelector], 0f);
+            else
+                shiftY = new Vector3(0f, -5 * obstacleHights[obstacleSelector], 0f);
             //Debug.Log(obstacleYpos[obstacleSelector]);
-            Instantiate(theObstacles[obstacleSelector], transform.position, transform.rotation);
+            Instantiate(theObstacles[obstacleSelector], transform.position+ shiftY, transform.rotation);
         }
     }
 }

@@ -514,4 +514,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreToGive: 100
   thePlayer: {fileID: 0}
-  maxDistance: 40
+  maxDistance: 35
