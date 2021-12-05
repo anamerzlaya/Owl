@@ -30,8 +30,8 @@ public class ObstacleGenerator : MonoBehaviour
 
         for (int i=0; i<theObstacles.Length; i++)
         {
-            obstacleHights[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.x;
-            obstacleWidths[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.y;
+            obstacleHights[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.y;
+            obstacleWidths[i] = theObstacles[i].GetComponent<BoxCollider2D>().size.x;
         }
     }
 
@@ -50,11 +50,12 @@ public class ObstacleGenerator : MonoBehaviour
 
             Vector3 shiftY;
             if (isAbove)
-                shiftY = new Vector3(0f, -5*obstacleHights[obstacleSelector], 0f);
+                shiftY = new Vector3(0f, (float)-2.5*obstacleHights[obstacleSelector], 0f);
             else
-                shiftY = new Vector3(0f, -5 * obstacleHights[obstacleSelector], 0f);
+                shiftY = new Vector3(0f, (float)2.5 * obstacleHights[obstacleSelector], 0f);
             //Debug.Log(obstacleYpos[obstacleSelector]);
             Instantiate(theObstacles[obstacleSelector], transform.position+ shiftY, transform.rotation);
+            //Instantiate(theObstacles[obstacleSelector], transform.position, transform.rotation);
         }
     }
  
