@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
             Owl.GetComponent<Animator>().SetBool("IsFlyForward", false);
             Owl.GetComponent<Animator>().SetBool("IsFlyBackwards", false);
         }
+        //Owl.GetComponent<Animator>().SetBool("Hit", false);
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)

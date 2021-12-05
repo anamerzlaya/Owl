@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
             highScoreCount = scoreCount;
             PlayerPrefs.SetFloat("HighScore",highScoreCount); //saves to computer the value
         }
-
+        scoreCount = Mathf.Clamp(scoreCount, 0, scoreCount);
         scoreText.text = "Score: "+ Mathf.Round(scoreCount);
         highScoreText.text = "High score: " + Mathf.Round(highScoreCount);
     }

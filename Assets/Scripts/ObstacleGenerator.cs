@@ -18,9 +18,11 @@ public class ObstacleGenerator : MonoBehaviour
     private float[] obstacleHights;
     private float[] obstacleWidths;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         //obstacleWidth = theObstacle.GetComponent <BoxCollider2D>().size.x;
 
         obstacleWidths = new float[theObstacles.Length];
@@ -55,4 +57,5 @@ public class ObstacleGenerator : MonoBehaviour
             Instantiate(theObstacles[obstacleSelector], transform.position+ shiftY, transform.rotation);
         }
     }
+ 
 }
