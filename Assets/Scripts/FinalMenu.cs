@@ -6,6 +6,7 @@ public class FinalMenu : MonoBehaviour
 {
     public void RestartGame()
     {
+        AudioManager.instance.PlaySFX(3);
         FindObjectOfType<GameManager>().Reset();
     }
 }

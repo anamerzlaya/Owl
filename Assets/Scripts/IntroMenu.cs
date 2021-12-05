@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroMenu : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class IntroMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        Application.LoadLevel("playGameLevel");
+        AudioManager.instance.PlaySFX(3);
+        //Application.LoadLevel("playGameLevel");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()

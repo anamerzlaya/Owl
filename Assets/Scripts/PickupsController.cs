@@ -40,6 +40,8 @@ public class PickupsController : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
+            AudioManager.instance.PlaySFX(1);
+
             theScoreManager.AddScore(scoreToGive);
 
             gameObject.SetActive(false);
