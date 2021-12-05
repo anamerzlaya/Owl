@@ -3706,8 +3706,8 @@ MonoBehaviour:
   theObstacle: {fileID: 1543789469}
   generationPoint: {fileID: 1666027443}
   distanceBetween: 10
-  distanceBetweenMin: 300
-  distanceBetweenMax: 1000
+  distanceBetweenMin: 500
+  distanceBetweenMax: 1500
   isRandomised: 1
   isAbove: 0
   theObstacles:
@@ -4789,3 +4789,33 @@ MonoBehaviour:
   highScoreCount: 500
   pointsPerSecond: 5
   scoreIncreasing: 1
+--- !u!1 &2134761385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2134761386}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2134761386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134761385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.651627, y: -30.282682, z: -61.935753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

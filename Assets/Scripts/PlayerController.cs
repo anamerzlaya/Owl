@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed_x;
     public float moveSpeed_y;
     public float speedMultiplier;
+    public float speedDescreaseLeft;
     public float speedIncreaseMilestone;
     private float speedIncreaseMilestoneStore;
     private float speedMilestoneCount;
@@ -45,8 +46,10 @@ public class PlayerController : MonoBehaviour
         // if (Input.GetAxis("Horizontal")!=0) Debug.Log( theRB.velocity.x);
          float newXpos = transform.position.x;
          float newYpos = transform.position.y;
-         if (Input.GetAxis("Horizontal") != 0)
+         if (Input.GetAxis("Horizontal") > 0)
              newXpos = transform.position.x + moveSpeed_x * Input.GetAxis("Horizontal");
+        if (Input.GetAxis("Horizontal") < 0)
+             newXpos = transform.position.x + speedDescreaseLeft * moveSpeed_x * Input.GetAxis("Horizontal");
          if (Input.GetAxis("Vertical") != 0)
              newYpos = transform.position.y + moveSpeed_y * Input.GetAxis("Vertical");
         //transform.position = new Vector3(newXpos, newYpos, transform.position.z);
