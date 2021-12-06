@@ -84,10 +84,12 @@ public class GameManager : MonoBehaviour
         goodBugGenerator.position = goodBugStartPoint;
         badBugGenerator.position = badBugStartPoint;
         thePlayer.gameObject.SetActive(true);
-        Animator theOwlAnim = thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
-        theOwlAnim.enabled = false;
-        theOwlAnim.enabled = true;
-        theOwlAnim.Play("Owl_fly_init");
+        //Animator theOwlAnim = thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        //theOwlAnim.keepAnimatorControllerStateOnDisable=true;
+        //thePlayer.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().runtimeAnimatorController = theOwlAnim.runtimeAnimatorController as RuntimeAnimatorController;
+        //theOwlAnim.enabled = false;
+        //theOwlAnim.enabled = true;
+        //theOwlAnim.Play("Owl_fly_init");
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
 
